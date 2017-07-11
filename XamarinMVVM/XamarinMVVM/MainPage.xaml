@@ -4,8 +4,9 @@
              xmlns:local="clr-namespace:XamarinMVVM"
              x:Class="XamarinMVVM.MainPage">
 
-	<Label Text="{Binding Texto}" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+    <StackLayout>
+        <Entry Text="{Binding Texto}"/>
+        <Button Text="Pesquisar" Command="{Binding BotaoCommand}"/>
+    </StackLayout>
+	
 </ContentPage>

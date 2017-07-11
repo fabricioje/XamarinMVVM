@@ -26,6 +26,7 @@ namespace XamarinMVVM.ViewModel
 
             storage = value;
             OnPropertyChanged(nomePropriedade);
+
             return true;
         }
     }
