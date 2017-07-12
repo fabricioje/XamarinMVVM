@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -22,19 +23,29 @@ namespace XamarinMVVM.ViewModel
             }
         }
 
+        //propriedade para lista
+        public ObservableCollection<string> Resultados { get; }
+
         //propriedade Command get only
         public Command BotaoCommand { get; }
 
         public MainViewModel()
         {
+            //Inicializa o Command
             BotaoCommand = new Command(ExecuteBotaoCommand, CanExecuteBotaoCommand);
+
+            //Inicializa a ObservableCollection
+            Resultados = new ObservableCollection<string>(new[] { "abc", "def", "ghi" });
         }
 
         //metódo para execultar o Command
-        static void ExecuteBotaoCommand()
+        void ExecuteBotaoCommand()
         {
             //forma de executar o Display Alert, mas quebrando o MVVM
             App.Current.MainPage.DisplayAlert("Titulo", "Mensagem para o usuário", "Botão de Confirmação");
+
+            //Adicionar elemento na lista
+            Resultados.Add(Texto);
         }
 
         //metódo para verificar se o Command pode ser executado
