@@ -33,6 +33,7 @@ namespace XamarinMVVM.ViewModel
         //metódo para execultar o Command
         static void ExecuteBotaoCommand()
         {
+            //forma de executar o Display Alert, mas quebrando o MVVM
             App.Current.MainPage.DisplayAlert("Titulo", "Mensagem para o usuário", "Botão de Confirmação");
         }
 
