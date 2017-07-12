@@ -30,16 +30,16 @@ namespace XamarinMVVM.ViewModel
             BotaoCommand = new Command(ExecuteBotaoCommand, CanExecuteBotaoCommand);
         }
 
+        //metódo para execultar o Command
+        static void ExecuteBotaoCommand()
+        {
+            App.Current.MainPage.DisplayAlert("Titulo", "Mensagem para o usuário", "Botão de Confirmação");
+        }
+
         //metódo para verificar se o Command pode ser executado
         private bool CanExecuteBotaoCommand()
         {
             return string.IsNullOrWhiteSpace(Texto) == false;
-        }
-
-        //metódo para execultar o Command
-        static void ExecuteBotaoCommand()
-        {
-            Debug.WriteLine("Clicou no botão");
         }
     }
 }
